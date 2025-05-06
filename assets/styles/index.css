@@ -1,0 +1,286 @@
+/* CSS Reset */
+/* This one is from Andy Bell, you can find it here: https://piccalil.li/blog/a-more-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+
+/* CSS Base Rules, Utilities and Blocks */
+
+:root {
+    --color-black: #121212;
+    --color-white: #FFFFFF;
+    --color-light: #F6F5F6;
+    --color-dark-blue: #19202D;
+
+    --color-grey-100: #E7EAEE;
+    --color-grey-200: #CFCFCF;
+    --color-grey-300: #A3AAB4;
+    --color-grey-400: #676D7E;
+    --color-grey-500: #48556A;
+
+    --color-purple-50: #EDE4FF;
+    --color-purple-300: #A775F1;
+    --color-purple-500: #733FC8;
+
+    --font-family: 'Barlow Semi Condensed';
+
+    --font-size-11: 0.6875rem;
+    --font-size-13: 0.8125rem;
+    --font-size-20: 1.25rem;
+
+    --space-500: 2.5rem;
+    --space-400: 2rem;
+    --space-300: 1.5rem;
+    --space-200: 1rem;
+    --space-100: 0.5rem;
+    --space-50: 0.25rem;
+
+    font-family: var(--font-family), sans-serif;
+}
+
+body {
+    padding: var(--space-400) var(--space-200);
+}
+
+body, h2, p {
+    margin: 0;
+}
+
+.wrapper {
+    max-width: 1114px;
+    margin: auto;
+}
+
+.color-white {
+    color: var(--color-white);
+}
+
+.color-grey-100 {
+    color: var(--color-grey-100);
+}
+
+.color-grey-200 {
+    color: var(--color-grey-200);
+}
+
+.color-grey-300 {
+    color: var(--color-grey-300);
+}
+
+.color-grey-400 {
+    color: var(--color-grey-400);
+}
+
+.color-grey-500 {
+    color: var(--color-grey-500);
+}
+
+.color-purple-50 {
+    color: var(--color-purple-50);
+}
+
+.bg-white {
+    background-color: var(--color-white);
+}
+
+.bg-light {
+    background-color: var(--color-light);
+}
+
+.bg-dark-blue {
+    background-color: var(--color-dark-blue);
+}
+
+.bg-purple-500 {
+    background-color: var(--color-purple-500);
+}
+
+.bg-grey-500 {
+    background-color: var(--color-grey-500);
+}
+
+.border {
+    border: 2px solid var(--color-grey-100);
+}
+
+.border-purple-500 {
+    border-color: var(--color-purple-500);
+}
+
+.text-preset-1 {
+    font-size: var(--font-size-20);
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.text-preset-2 {
+    font-size: var(--font-size-13);
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.text-preset-3 {
+    font-size: var(--font-size-13);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.text-preset-4 {
+    font-size: var(--font-size-11);
+    line-height: 1.1;
+    font-weight: 500;
+}
+
+.round-image {
+    border-radius: 50%;
+}
+
+.pad-400 {
+    padding: var(--space-400);
+}
+
+.border-radius-50 {
+    border-radius: 0.5rem;
+}
+
+.box-shadow {
+    box-shadow: 40px 60px 50px -47px rgba(72, 85, 106, 0.25);
+}
+
+
+/* CSS Components */
+
+.testimonial-wrapper {
+    display: grid;
+    gap: var(--space-400);
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-200);
+}
+
+.testimonial header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-200);
+}
+
+.testimonial__author {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-50);
+}
+
+
+/* CSS Media Queries */
+
+@media (min-width: 40rem) {
+    body {
+        padding: 5rem 60px;
+    }
+
+    .testimonial-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .testimonial:first-child, .testimonial:nth-child(4), .testimonial:last-child {
+        grid-column: span 2;
+    }
+}
+
+@media (min-width: 60rem) {
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+
+    .testimonial-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    .testimonial:last-child {
+        grid-column: 4 / 5;
+        grid-row: 1 / -1;
+    }
+}
