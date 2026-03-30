@@ -102,7 +102,7 @@ textarea:not([rows]) {
 }
 
 body {
-    padding: var(--space-400) var(--space-200);
+    padding: 4.5rem 32px;
 }
 
 body, h2, p {
