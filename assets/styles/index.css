@@ -21,12 +21,6 @@ figure, blockquote, dl, dd {
     margin-block-end: 0;
 }
 
-/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
-    list-style: none;
-}
-
 /* Set core body defaults */
 body {
     min-height: 100vh;
@@ -39,10 +33,8 @@ button, input, label {
     line-height: 1.1;
 }
 
-/* Balance text wrapping on headings */
-h1, h2,
-h3, h4 {
-    text-wrap: balance;
+body {
+    -webkit-font-smoothing: antialiased;
 }
 
 /* A elements that don't have a class get default styles */
@@ -232,6 +224,29 @@ body, h2, p {
     gap: var(--space-200);
 }
 
+.testimonial:first-child {
+    position: relative;
+}
+
+.testimonial:first-child::after {
+    content: "";
+    position: absolute;
+    visibility: hidden;
+    width: 104px;
+    height: 102px;
+    background-image: url('../../images/bg-pattern-quotation.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    right: 167px;
+    top: 0;
+    z-index: 0;
+}
+
+.testimonial:first-child h2 {
+    position: relative;
+    z-index: 10;
+}
+
 .testimonial header {
     display: flex;
     align-items: center;
@@ -250,6 +265,10 @@ body, h2, p {
 @media (min-width: 40rem) {
     body {
         padding: 5rem 60px;
+    }
+
+    .testimonial:first-child::after {
+        visibility: visible;
     }
 
     .testimonial-wrapper {
@@ -276,7 +295,11 @@ body, h2, p {
 
     .testimonial-wrapper {
         grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+    }
+
+    .testimonial:first-child::after {
+        right: 60px;
     }
 
     .testimonial:last-child {
