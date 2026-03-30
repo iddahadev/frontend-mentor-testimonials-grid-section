@@ -166,6 +166,10 @@ body, h2, p {
     border: 2px solid var(--color-grey-100);
 }
 
+.border-purple-300 {
+    border-color: var(--color-purple-300);
+}
+
 .border-purple-500 {
     border-color: var(--color-purple-500);
 }
